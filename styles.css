@@ -1,0 +1,130 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #4EC0CA;
+}
+
+.game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: url('background.png') repeat-x;
+    background-size: cover;
+}
+
+
+.bird {
+    width: 80px;  /* Adjust based on the size of your bird image */
+    height: 80px; /* Adjust based on the size of your bird image */
+    background: url('bird-2.png') no-repeat center;
+    background-size: contain; 
+    position: absolute;
+    left: 50%;  /* Center the bird horizontally */
+    transform: translateX(-50%);
+    z-index: 10; /* To ensure the bird appears above other elements */
+}
+
+
+.play-btn {
+    position: absolute;
+    top: 60%;  /* You can adjust this if needed */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 15;  /* Keep button on top */
+    background-color: #4EC0CA;  /* Button color */
+    border: none;
+    border-radius: 30px;  /* Rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);  /* Drop shadow for 3D effect */
+    color: white;  /* Text color */
+    text-transform: uppercase;  /* Convert text to uppercase */
+    letter-spacing: 1px;  /* Spacing between letters for style */
+    transition: all 0.3s ease;  /* Smooth transition for hover effects */
+}
+
+.play-btn:hover {
+    background-color: #2EA3A1;  /* Slightly darker shade when hovered */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);  /* Slightly more pronounced shadow when hovered */
+    transform: translate(-50%, -50%) scale(1.05);  /* Slightly larger scale when hovered */
+}
+
+.play-btn:focus {
+    outline: none;  /* Remove default browser focus outline */
+}
+
+.ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50px;  /* Adjust based on your preference or the height of your image */
+    width: 200%;  /* Make it twice the width of the container to enable seamless animation */
+    background: url('ground.png') repeat-x;  /* Use a repeating ground texture */
+    z-index: 1;  /* Ensure it's below the bird */
+    background-size: contain; /* This ensures that the image scales appropriately */
+}
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 50px;  /* Width of the pipe */
+    border-radius: 10px;
+    background: #4E7554;  /* Base green color */
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);  /* Inner shadow for depth */
+    border: 3px solid #3B6148;  /* Border for contrast */
+    z-index: 1;
+}
+
+.pipe::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;  /* Height of the decorative band */
+    background: #3B6148;  /* Color of the decorative band */
+}
+
+.pipe::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10px;  /* Height of the decorative band */
+    background: #3B6148;  /* Color of the decorative band */
+}
+
+.pipe-top {
+    position: absolute;
+    top: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.game-over-message {
+    position: absolute;
+    top: 20%;  /* Adjust this to position the message higher */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 20;  /* Ensuring it's on top of other elements */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.scoreboard {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    background-color: rgba(255, 255, 255, 0.7); 
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 30; 
+}

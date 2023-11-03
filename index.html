@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="scoreboard">
+        Current Score: <span id="current-score">0</span>
+        Highest Score: <span id="highest-score">0</span>
+    </div>
+    
+    <div class="game-container">
+        <div class="ground"></div> <!-- Add this line -->
+        <div class="bird"></div>
+        <div class="game-over-message" hidden>Game Over!</div>
+        <button class="play-btn">Play</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
